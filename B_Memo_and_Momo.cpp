@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    long long int a, b, k;
+
+    cin>>a>>b>>k;
+
+    if(a%k==0 && b%k==0) cout<<"Both"<<endl;
+    if(a%k!=0 && b%k==0) cout<<"Momo"<<endl;
+    if(a%k==0 && b%k!=0) cout<<"Memo"<<endl;
+    if(a%k!=0 && b%k!=0) cout<<"No One"<<endl;
+
+    return 0;
+}
