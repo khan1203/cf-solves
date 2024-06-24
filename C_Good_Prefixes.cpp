@@ -1,6 +1,7 @@
 // by Khan Muhammad Rifat (CSE, BUBT)
 #include <bits/stdc++.h>
 #define ll long long
+#define nl "\n"
 #define PI 2 * acos(0.0)
 using namespace std;
 
@@ -8,31 +9,27 @@ void solve()
 {
     int n;
     cin >> n;
-    vector<int> v;
+    vector<ll> arr;
     for (int i = 0; i < n; i++)
     {
-        int z;
+        ll z;
         cin >> z;
-        v.push_back(z);
+        arr.push_back(z);
     }
 
-    int sum = 0, co = 0;
-    for (int i = n - 1; i >= 0; i--)
+    ll sum = 0, maxel = INT_MIN, gdarr = 0;
+    for (int i = 0; i < n; i++)
     {
-        for (int j = i; j >=0; j--)
+        sum += arr[i];
+        maxel = max(maxel, arr[i]);
+
+        if (sum - maxel == maxel)
         {
-            if (v[j] != v[i])
-            {
-                sum += v[j];
-                if (sum == 0 || sum == v[i])
-                {
-                    co++;
-                }
-            }
+            gdarr++;
         }
     }
 
-    cout << co << '\n';
+    cout<<gdarr<<nl;
 }
 
 int main()
