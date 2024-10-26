@@ -1,23 +1,43 @@
-//by Khan Muhammad Rifat (CSE, BUBT)
+// by Khan Muhammad Rifat (CSE, BUBT)
 #include <bits/stdc++.h>
 #define ll long long
+#define nl endl
+#define PI 2 * acos(0.0)
 using namespace std;
 
-void solve(){
-    int a,b;
-    cin>>a>>b;
-
-    if(a>b)cout<<">"<<"\n";
-    else if(a<b)cout<<"<"<<"\n";
-    else if(a==b)cout<<"=="<<"\n";
+void Fast_io()
+{
+    ios_base::sync_with_stdio(false);
+    cout.tie(NULL);
+    cin.tie(NULL);
 }
 
-int main(){
+int main()
+{
 
-    // solve();
+    ll n;
+    cin >> n;
 
-    int t;
-    cin>>t;
-    while(t--){ solve(); }
-return 0;
+    ll arr[n + 9];
+
+    for (ll i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    ll t;
+    cin >> t;
+
+    for (ll i = 0; i < n; i++)
+    {
+        if (arr[i] == t)
+        {
+            cout << i << endl;
+            return 0;
+        }
+    }
+
+    cout << -1 << endl;
+
+    return 0;
 }

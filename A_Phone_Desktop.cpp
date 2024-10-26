@@ -6,7 +6,7 @@ using namespace std;
 
 void solve()
 {
-    ll x, y;
+    int x, y;
     cin >> x >> y;
 
     if (x == 0 && y == 0)
@@ -14,39 +14,21 @@ void solve()
         cout << 0 << "\n";
         return;
     }
+    else if ((x <= 15 && y == 0) || (x <= 7 && y == 2) || (x == 0 && y <= 2) || (x <= 11 && y == 1))
+    {
+        cout << 1 << "\n";
+        return;
+    }
+
+    int ls = ceil(y / 2.0);
+    if (x > (7 * ls))
+    {
+        int ss = ((x - (7 * ls)) / 15) + 1;
+        cout << ls + ss << "\n";
+    }
     else
     {
-        ll s2;
-        if (y == 0)
-        {
-            ll fn = ceil(x / 15.0);
-            cout << fn << "\n";
-            return;
-        }
-        else
-        {
-            ll s1_left;
-            if (y % 2 == 0)
-            {
-                s2 = ceil(y / 2.0);
-                s1_left = s2 * 7;
-            }
-            else
-            {
-                s2 = ceil(y / 2.0);
-                s1_left = (s2 * 7) + 11;
-            }
-            if (x > s1_left)
-            {
-                ll diff = x - s1_left;
-                ll s2_left = ceil(diff / 15.0);
-                cout << s2 + s2_left << "\n";
-            }
-            else
-            {
-                cout << s2 << "\n";
-            }
-        }
+        cout << ls << "\n";
     }
 }
 
